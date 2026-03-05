@@ -6,6 +6,7 @@ import authRoutes from "./src/routes/auth.routes.js";
 import clientProfileRoutes from "./src/routes/clientProfile.routes.js";
 import agencyProfileRoutes from "./src/routes/agencyProfile.routes.js";
 import matchRoutes from "./src/routes/match.routes.js";
+import userRoutes from "./src/routes/user.routes.js";
 
 dotenv.config();
 connectDB();
@@ -23,8 +24,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/client-profile", clientProfileRoutes);
 app.use("/api/agency-profile", agencyProfileRoutes);
 app.use("/api/match", matchRoutes);
+app.use("/api/users", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
