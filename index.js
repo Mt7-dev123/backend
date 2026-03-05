@@ -3,6 +3,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRoutes from "./src/routes/auth.routes.js";
+import clientProfileRoutes from "./src/routes/clientProfile.routes.js";
+import agencyProfileRoutes from "./src/routes/agencyProfile.routes.js";
+import matchRoutes from "./src/routes/match.routes.js";
 
 dotenv.config();
 connectDB();
@@ -17,6 +20,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/client-profile", clientProfileRoutes);
+app.use("/api/agency-profile", agencyProfileRoutes);
+app.use("/api/match", matchRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
